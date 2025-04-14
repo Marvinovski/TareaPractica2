@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">VideoGames RF</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email"><b>Correo:</b> %1$s</string>
+    <string name="telephone"><b>Teléfono:</b> %1$s</string>
+    <string name="name">Nombre</string>
+    <string name="date_reservation">Fecha de reservación: %1$s</string>
+    <string name="time_reservation">Hora de reservación: %1$s</string>
+    <string name="share_court">Comparte la cancha: %1$s</string>
+    <string name="yes">Yes</string>
+    <string name="si">Sí</string>
+    <string name="no">No</string>
+</resources>
