@@ -18,6 +18,9 @@ import com.amaurypm.videogamesrf.databinding.FragmentGameDetailBinding
 import com.amaurypm.videogamesrf.utils.Constants
 import com.amaurypm.videogamesrf.utils.isAtLeastAndroid
 import com.bumptech.glide.Glide
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstants
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import kotlinx.coroutines.launch
 
 private const val ARG_GAMEID = "user"
@@ -64,9 +67,25 @@ class GameDetailFragment : Fragment() {
 
                     tvTitle.text = gameDetail.name
 
-                    Glide.with(requireActivity())
-                        .load(gameDetail.image)
-                        .into(ivImage)
+                    //Glide.with(requireActivity())
+                     //   .load(gameDetail.image)
+                        //.into(ivImage)
+
+                    ytVideo.addYouTubePlayerListener(object: AbstractYouTubePlayerListener() {
+                        override fun onReady(youTubePlayer: YouTubePlayer) {
+                            super.onReady(youTubePlayer)
+
+                            youTubePlayer.loadVideo(gameDetail.url_video.toString(), 0f )
+                        }
+
+                        override fun onError(
+                            youTubePlayer: YouTubePlayer,
+                            error: PlayerConstants.PlayerError
+                        ) {
+                            super.onError(youTubePlayer, error)
+                            youTubePlayer.loadVideo(gameDetail.url_video.toString(), 0f )
+                        }
+                    })
 
 
                     tvEmail.text = (getString(R.string.email, gameDetail.email))

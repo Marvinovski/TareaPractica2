@@ -1,5 +1,6 @@
 package com.amaurypm.videogamesrf.ui.fragments
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -25,6 +26,8 @@ class GamesListFragment : Fragment() {
 
     private lateinit var repository: GameRepository
 
+    private lateinit var mediaPlayer: MediaPlayer
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -32,6 +35,7 @@ class GamesListFragment : Fragment() {
         // Inflate the layout for this fragment
 
         _binding = FragmentGamesListBinding.inflate(inflater, container, false)
+        mediaPlayer = MediaPlayer.create(requireContext(),R.raw.hit)
         return binding.root
     }
 
@@ -55,6 +59,7 @@ class GamesListFragment : Fragment() {
                    adapter = GamesAdapter(games){ selectedGame ->
                       // Log.d(Constants.LOGTAG, "Click en ${selectedGame.title}")
                        selectedGame.user?.let {  id ->
+                           mediaPlayer.start()
                            requireActivity().supportFragmentManager.beginTransaction()
                                .replace(
                                    R.id.fragment_container,
@@ -85,6 +90,8 @@ class GamesListFragment : Fragment() {
 
     override fun onDestroy() {
         super.onDestroy()
+
+        mediaPlayer.release()
         _binding = null
     }
 

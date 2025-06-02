@@ -12,8 +12,7 @@ data class GameDetailDto(
     var longDesc: String? = null*/
     @SerializedName("name")
     var name: String? = null,
-    @SerializedName("image")
-    var image: String? = null,
+
     @SerializedName("email")
     var email: String? = null,
     @SerializedName("telephone")
@@ -23,6 +22,8 @@ data class GameDetailDto(
     @SerializedName("time_reservation")
     var timeReservation: String? = null,
     @SerializedName("share_court")
-    var shareCourt: String? = null
+    var shareCourt: String? = null,
+    @SerializedName("image")
+    var url_video: String? = null
 
 )
