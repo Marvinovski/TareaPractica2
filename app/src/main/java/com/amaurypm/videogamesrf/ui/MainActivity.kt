@@ -2,8 +2,12 @@ package com.amaurypm.videogamesrf.ui
 
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.text.InputType
 import android.util.Log
+import android.util.Patterns
+import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -25,10 +29,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        val splashScreen = installSplashScreen()
-        splashScreen.setKeepOnScreenCondition{
-            false
-        }
+
 
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -79,6 +80,8 @@ class MainActivity : AppCompatActivity() {
         }*/
 
 
-
     }
+
+
+
 }

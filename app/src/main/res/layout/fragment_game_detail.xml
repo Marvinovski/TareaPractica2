@@ -129,6 +129,16 @@
                         />
 
 
+                    <androidx.fragment.app.FragmentContainerView
+                        android:id="@+id/map"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvShareCourt"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginTop="20dp"/>
+
                 </LinearLayout>
             </ScrollView>
 
@@ -141,7 +151,12 @@
                 android:indeterminateDuration="1500"
                 />
 
+
+
         </RelativeLayout>
+
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

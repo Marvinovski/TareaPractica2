@@ -4,6 +4,7 @@ import java.util.Properties
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -19,6 +20,15 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
+        val localPropertiesMap = Properties()
+        val localPropertiesFileMap = rootProject.file("local.properties")
+        if(localPropertiesFileMap.exists()){
+            localPropertiesMap.load(localPropertiesFileMap.inputStream())
+        }
+
+        val mapsApiKey = localPropertiesMap.getProperty("MAPS_API_KEY")
+
+        manifestPlaceholders["MAPS_API_KEY"] = mapsApiKey
 
         val localProperties = Properties()
         val localPropertiesFile = rootProject.file("local.properties")
@@ -72,6 +82,16 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
+//Google Maps (Play services de Google Maps, tanto para vistas XML como para Compose)
+    implementation(libs.play.services.maps)
+
+//API'S opcionales para la ubicación (XML y Compose). Ej. Clase FusedLocationProviderClient
+    implementation(libs.play.services.location)
+
+//Para corrutinas con alcance viewModel
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+
+
     //Para retrofit y Gson
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
@@ -88,6 +108,7 @@ dependencies {
 
     //Imágenes con bordes redondeados
     implementation(libs.roundedimageview)
+    implementation(libs.firebase.auth)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
