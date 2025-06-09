@@ -11,4 +11,20 @@
     <string name="yes">Yes</string>
     <string name="si">Sí</string>
     <string name="no">No</string>
+    <string name="pswrequired">Se requiere una contraseña</string>
+    <string name="psw6">La contraseña debe tener al menos 6 caracteres</string>
+    <string name="formatemailerror">Error: El correo electrónico no tiene un formato correcto</string>
+    <string name="formatemailincorrect">Error: El correo electrónico no tiene un formato correcto</string>
+    <string name="invalidpsw">Error: La contraseña no es válida</string>
+    <string name="mail_required">Se requiere el correo</string>
+    <string name="email_format_invalid">El correo no tiene un formato válido</string>
+    <string name="calcel">Cancelar</string>
+    <string name="plis_mail">Por favor ingrese un correo.</string>
+    <string name="fail_send_message">No se pudo enviar el mensaje.</string>
+    <string name="link_send">El enlace ha sido enviado.</string>
+    <string name="send">Enviar</string>
+    <string name="capture_mail">Ingrese su correo</string>
+    <string name="res_psw">Restablecer contraseña</string>
+    <string name="created_user">Usuario creado exitosamente.</string>
+    <string name="succes_auth">Autenticación exitosa.</string>
 </resources>

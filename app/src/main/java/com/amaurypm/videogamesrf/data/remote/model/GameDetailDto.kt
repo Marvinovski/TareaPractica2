@@ -24,6 +24,14 @@ data class GameDetailDto(
     @SerializedName("share_court")
     var shareCourt: String? = null,
     @SerializedName("image")
-    var url_video: String? = null
+    var url_video: String? = null,
+    @SerializedName("lat")
+    var lat: String? = null,
+    @SerializedName("lon")
+    var lon: String? = null,
+    @SerializedName("title")
+    var title: String? = null,
+    @SerializedName("snippet")
+    var snippet: String? = null
 
 )
